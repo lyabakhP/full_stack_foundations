@@ -8,3 +8,11 @@ Base = declarative_base()
 engine = create_engine('sqlite:///restaurantmenu.db')
 
 Base.metadata.create_all(engine)# add tables to db 
+
+class Restaurant(Base):
+    __tablename__='restaurant'
+
+class MenuItem(object):
+    __tablename__='menu_item'
+
+        
