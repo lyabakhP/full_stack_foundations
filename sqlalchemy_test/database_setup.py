@@ -5,9 +5,6 @@ from sqlalchemy.orm import relationship
 from sqlalchemy import create_engine
 Base = declarative_base()
 
-engine = create_engine('sqlite:///restaurantmenu.db')
-
-Base.metadata.create_all(engine)# add tables to db 
 
 class Restaurant(Base):
     __tablename__='restaurant'
@@ -23,4 +20,7 @@ class MenuItem(object):
     price = Column(String(8))
     restaurant_id = Column(Integer, ForeignKey('restaurant.id'))
     restaurant = relationship(Restaurant)
-        
+
+engine = create_engine('sqlite:///restaurantmenu.db')
+Base.metadata.create_all(engine)# add tables to db 
+   
