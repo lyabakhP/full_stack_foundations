@@ -7,4 +7,4 @@ Base = declarative_base()
 
 engine = create_engine('sqlite:///restaurantmenu.db')
 
-Base.metadata.create_all(engine)# add tables to db
+Base.metadata.create_all(engine)# add tables to db 
